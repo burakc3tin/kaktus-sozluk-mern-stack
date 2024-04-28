@@ -102,7 +102,7 @@ useEffect(() => {
   }, [entryLike,entryDislike,entryCommentLike,entryCommentDislike]);
  
    useEffect(() => {
-    fetch('http://localhost:3000/api/users/')
+    fetch('https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/')
       .then(response => response.json())
       .then(users => {
         const currentUser = users.find(user => user.username === localStorage.getItem('username'));

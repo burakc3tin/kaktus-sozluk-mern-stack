@@ -20,7 +20,7 @@ export default function EntryDetail() {
         // URL'den id değerini al
         const entryId = window.location.pathname.split('/').pop();
       
-        const response = await axios.get(`http://localhost:3000/api/entries/${entryId}?type=${type}`);
+        const response = await axios.get(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/${entryId}?type=${type}`);
         setEntry(response.data);
       
       } catch (error) {
@@ -33,7 +33,7 @@ export default function EntryDetail() {
         // URL'den id değerini al
         const entryId = window.location.pathname.split('/').pop();
       
-        const responseComment = await axios.get(`http://localhost:3000/api/entries/${entryId}?type=${type}`);
+        const responseComment = await axios.get(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/${entryId}?type=${type}`);
         setEntryComment(responseComment.data);
     
       } catch (error) {
