@@ -6,7 +6,7 @@ export default function Entry({id, text, author }) {
   useEffect(() => {
     const fetchCommentCount = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/api/entries/allcomment/${id}`);
+        const response = await axios.get(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/allcomment/${id}`);
  setCommentCount(response.data.length)
 } catch (error) {
         console.error('Yorum sayısı alınamadı:', error);

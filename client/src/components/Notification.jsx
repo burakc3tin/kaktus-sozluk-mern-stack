@@ -11,7 +11,7 @@ export default function Notification({ sender, likeColor }) {
 
   useEffect(() => {
     if (sender) {
-      axios.get('http://localhost:3000/api/users/getallnotifi')
+      axios.get('https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/getallnotifi')
         .then(response => {
           const notifies = response.data;
           const foundUser = notifies.find(notifi => notifi._id === sender);
@@ -29,7 +29,7 @@ export default function Notification({ sender, likeColor }) {
  
   useEffect(() => {
     if (senderId) {
-      axios.get(`http://localhost:3000/api/users/`)
+      axios.get(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/`)
         .then(response => {
           const users = response.data;
           const foundUser = users.find(user => user._id === senderId);

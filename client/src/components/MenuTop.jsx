@@ -20,7 +20,7 @@ export default function MenuTop() {
    const dispatch = useDispatch();
  
    useEffect(() => {
-    fetch('http://localhost:3000/api/users/')
+    fetch('https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/')
       .then(response => response.json())
       .then(users => {
         const currentUser = users.find(user => user.username === localStorage.getItem('username'));
@@ -38,7 +38,7 @@ export default function MenuTop() {
   const handleResetNotifications = async () => { 
     
     try {
-       await axios.post(`http://localhost:3000/api/users/resetnotification/${userId}`);
+       await axios.post(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/resetnotification/${userId}`);
      
     } catch (error) {
       console.error('Bir hata oluştu:', error);

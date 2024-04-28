@@ -12,7 +12,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/api/auth/login', { username, password });
+      const response = await axios.post('https://kaktus-sozluk-mern-stack-1.onrender.com/api/auth/login', { username, password });
       const token = response.data.token; // JWT tokeni
       if (token) {
         localStorage.setItem('token', token); // Tokeni localStorage'e kaydet

@@ -34,7 +34,7 @@ export default function AddEntry() {
   const onSubmit = async (data) => { 
     
     try {
-      const response = await axios.post('http://localhost:3000/api/entries', {
+      const response = await axios.post('https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries', {
         text: data.text,
         content: data.content,
         author

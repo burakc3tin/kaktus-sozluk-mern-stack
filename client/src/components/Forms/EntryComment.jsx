@@ -15,7 +15,7 @@ export default function EntryComment({ entryTopicText, entryid }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/entries/add', {
+      const response = await fetch('https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

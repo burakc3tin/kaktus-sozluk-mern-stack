@@ -15,7 +15,7 @@ const getTodayDate = () => {
 export const fetchEntries = createAsyncThunk(
   'entries/fetchEntries',
   async () => {
-    const response = await axios.get('http://localhost:3000/api/entries');
+    const response = await axios.get('https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries');
     return response.data;
   }
 );

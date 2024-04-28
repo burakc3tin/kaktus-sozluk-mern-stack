@@ -14,7 +14,7 @@ export default function Profile() {
     const [successMessage, setSuccessMessage] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/users/')
+        fetch('https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/')
           .then(response => response.json())
           .then(users => {
             const currentUser = users.find(user => user.username === localStorage.getItem('username'));
@@ -34,7 +34,7 @@ export default function Profile() {
 
     const authenticator = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/imageauth');
+            const response = await fetch('https://kaktus-sozluk-mern-stack-1.onrender.com/api/imageauth');
 
             if (!response.ok) {
                 const errorText = await response.text();
@@ -66,7 +66,7 @@ export default function Profile() {
             const updatedImageData = { 
                 image
             };
-            await axios.put(`http://localhost:3000/api/users/edit/${id}`, updatedImageData);
+            await axios.put(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/edit/${id}`, updatedImageData);
         } catch (error) {
             console.log(error);
         }
@@ -87,7 +87,7 @@ export default function Profile() {
                 image
             };
 
-            await axios.put(`http://localhost:3000/api/users/edit/${id}`, updatedDataEntry);
+            await axios.put(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/edit/${id}`, updatedDataEntry);
            setErrorMessage('');
             setSuccessMessage("Parolanız başarılı bir şekilde değiştirildi!");
 

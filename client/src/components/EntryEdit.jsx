@@ -11,9 +11,9 @@ export default function EntryEdit({id,deleteStatus}) {
         try {
             let endpoint = '';
             if (deleteStatus === 'entry') {
-                endpoint = `http://localhost:3000/api/entries/${id}`;
+                endpoint = `https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/${id}`;
             } else if (deleteStatus === 'entrydetail') {
-                endpoint = `http://localhost:3000/api/entries/entrycomment/${id}`;
+                endpoint = `https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/entrycomment/${id}`;
             }
             const response = await fetch(endpoint, {
                 method: 'DELETE',

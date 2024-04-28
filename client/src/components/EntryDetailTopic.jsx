@@ -26,7 +26,7 @@ export default function EntryDetailTopic({id, text, content, author, deleteStatu
     useEffect(() => {
       const fetchAuthorId = async () => {
         try {
-          const response = await axios.get('http://localhost:3000/api/users');
+          const response = await axios.get('https://kaktus-sozluk-mern-stack-1.onrender.com/api/users');
           const users = response.data;
           
           // Verilen author adına sahip kullanıcının id'sini bul
@@ -70,7 +70,7 @@ useEffect(() => {
       try {
         // URL'den id değerini al
        
-        const response = await axios.get(`http://localhost:3000/api/entries/${id}?type=${type}`);
+        const response = await axios.get(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/${id}?type=${type}`);
         setEntryLike(response.data.like);
         setEntryDislike(response.data.dislike);
 
@@ -84,7 +84,7 @@ useEffect(() => {
       try {
         // URL'den id değerini al
        
-        const responseComment = await axios.get(`http://localhost:3000/api/entries/${id}?type=${type}`);
+        const responseComment = await axios.get(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/${id}?type=${type}`);
         setEntryCommentLike(responseComment.data.like);
         setEntryCommentDislike(responseComment.data.dislike);
      
@@ -137,7 +137,7 @@ useEffect(() => {
              if(updatedUserLikeData.likes.includes(id)){
                 updatedUserLikeData.likes =  updatedUserLikeData.likes.filter(item => item !== id)
                 updatedData.like = likeCount -1;
-                await axios.delete('http://localhost:3000/api/users/notification', {
+                await axios.delete('https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/notification', {
                   data: {
                       userId: authorId,
                       entryId: id,
@@ -153,7 +153,7 @@ useEffect(() => {
             updatedData.dislike = dislikeCount -1;
           
           
-            await axios.post('http://localhost:3000/api/users/notification', {
+            await axios.post('https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/notification', {
               userId: authorId,
               entryId: id ,
               sendUsername: localStorage.getItem('username')
@@ -165,7 +165,7 @@ useEffect(() => {
         else{
             updatedUserLikeData.likes =[...likes, id]
             updatedData.like = likeCount+1;
-            await axios.post('http://localhost:3000/api/users/notification', {
+            await axios.post('https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/notification', {
               userId: authorId,
               entryId: id ,
               sendUsername: localStorage.getItem('username')
@@ -186,7 +186,7 @@ useEffect(() => {
             updatedUserLikeData.dislikes =  [...dislikes, id];
             updatedData.like = likeCount -1;
             updatedData.dislike = dislikeCount +1;
-            await axios.delete('http://localhost:3000/api/users/notification', {
+            await axios.delete('https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/notification', {
               data: {
                   userId: authorId,
                   entryId: id,
@@ -202,13 +202,13 @@ useEffect(() => {
  
         } 
        
-        await axios.put(`http://localhost:3000/api/users/edit/${userId}`, updatedUserLikeData);
+        await axios.put(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/users/edit/${userId}`, updatedUserLikeData);
 
         if (deleteStatus === 'entry') { 
-            await axios.put(`http://localhost:3000/api/entries/${id}`, updatedData);
+            await axios.put(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/${id}`, updatedData);
             window.location.reload()
         } else {
-            await axios.put(`http://localhost:3000/api/entries/entrycomment/${id}`, updatedData);
+            await axios.put(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/entrycomment/${id}`, updatedData);
             window.location.reload()
         }
     } catch (error) {

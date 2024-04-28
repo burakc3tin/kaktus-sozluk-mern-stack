@@ -21,7 +21,7 @@ export default function UpdateEntry() {
             try {
                 if(editStatus === 'entry')
                { 
-                const response = await axios.get(`http://localhost:3000/api/entries/${id}?type=${editStatus}`);
+                const response = await axios.get(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/${id}?type=${editStatus}`);
                 const { text, content } = response.data;
                setText(text);
                setContent(content);
@@ -30,7 +30,7 @@ export default function UpdateEntry() {
                else if(editStatus === 'entrydetail')
                {
                 
-                const response = await axios.get(`http://localhost:3000/api/entries/entrycommentsingle/${id}`);
+                const response = await axios.get(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/entrycommentsingle/${id}`);
            
                 const { text } = response.data;
                setText(text);
@@ -55,11 +55,11 @@ export default function UpdateEntry() {
           };
             if(editStatus === 'entry')
             { 
-               await axios.put(`http://localhost:3000/api/entries/${id}`, updatedDataEntry);
+               await axios.put(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/${id}`, updatedDataEntry);
                window.history.back();
             }
             else{
-                await axios.put(`http://localhost:3000/api/entries/entrycomment/${id}`, updatedDataContent);
+                await axios.put(`https://kaktus-sozluk-mern-stack-1.onrender.com/api/entries/entrycomment/${id}`, updatedDataContent);
                 window.history.back();
 
             }

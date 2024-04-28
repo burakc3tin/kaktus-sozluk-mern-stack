@@ -15,7 +15,7 @@ function Register() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/users', {
+      const response = await axios.post('https://kaktus-sozluk-mern-stack-1.onrender.com/api/users', {
         username: data.username,
         password: data.password,
         image
