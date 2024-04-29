@@ -11,7 +11,7 @@ Ekşi Sözlük konsepti ile yapılmış bu projede;
 ➡️ Bugünün başlıkları seçilebilir
 ➡️ JWT auth'u destekler
 
-⭐ React, Express, MongoDB, TailwindCSS, React Toastify, UUid, Axios, React Router, ImageKit teknolojileri kullanılmıştır.
+⭐ React, Redux, Express, MongoDB, TailwindCSS, React Toastify, UUid, Axios, React Router, ImageKit teknolojileri kullanılmıştır.
 
 ### `Canlı Demo`
  [Live Demo Link
