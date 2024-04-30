@@ -15,7 +15,7 @@ Ekşi Sözlük konsepti ile yapılmış bu projede;
 
 ### `Canlı Demo`
  [Live Demo Link
-](https://662f7e57e55fa3007d7163f2--lucky-druid-eb40b4.netlify.app/anasayfa) 
+](https://6630b01484bad4aefd758232--darling-sawine-664010.netlify.app/) 
 
 ### `Proje Videosu`
 
